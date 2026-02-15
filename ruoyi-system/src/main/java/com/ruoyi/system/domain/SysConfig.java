@@ -44,6 +44,7 @@ public class SysConfig extends BaseEntity
 
     public void setConfigId(Long configId)
     {
+
         this.configId = configId;
     }
 
