@@ -4,6 +4,7 @@
     <list default="true" id="3190506b-4de9-4b1c-8197-33d063374a83" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/register.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
