@@ -61,8 +61,9 @@ export const constantRoutes = [
     component: () => import('@/views/error/401'),
     hidden: true
   },
+  // 临时修改：设置根路径直接指向首页
   {
-    path: '',
+    path: '/',
     component: Layout,
     redirect: 'index',
     children: [
@@ -74,17 +75,91 @@ export const constantRoutes = [
       }
     ]
   },
+  // 原始默认路由
+  // {
+  //   path: '',
+  //   component: Layout,
+  //   redirect: 'index',
+  //   children: [
+  //     {
+  //       path: 'index',
+  //       component: () => import('@/views/index'),
+  //       name: 'Index',
+  //       meta: { title: '首页', icon: 'dashboard', affix: true }
+  //     }
+  //   ]
+  // },
+  {
+    path: '/system',
+    component: Layout,
+    hidden: false,
+    redirect: 'noredirect',
+    alwaysShow: true,
+    meta: { title: '系统管理', icon: 'system' },
+    children: [
+      {
+        path: 'user',
+        component: () => import('@/views/system/user/index'),
+        name: 'User',
+        meta: { title: '用户管理', icon: 'user' }
+      },
+      {
+        path: 'role',
+        component: () => import('@/views/system/role/index'),
+        name: 'Role',
+        meta: { title: '角色管理', icon: 'peoples' }
+      },
+      {
+        path: 'menu',
+        component: () => import('@/views/system/menu/index'),
+        name: 'Menu',
+        meta: { title: '菜单管理', icon: 'tree' }
+      },
+      {
+        path: 'dept',
+        component: () => import('@/views/system/dept/index'),
+        name: 'Dept',
+        meta: { title: '部门管理', icon: 'tree-table' }
+      },
+      {
+        path: 'post',
+        component: () => import('@/views/system/post/index'),
+        name: 'Post',
+        meta: { title: '岗位管理', icon: 'post' }
+      },
+      {
+        path: 'dict',
+        component: () => import('@/views/system/dict/index'),
+        name: 'Dict',
+        meta: { title: '字典管理', icon: 'dict' }
+      },
+      {
+        path: 'config',
+        component: () => import('@/views/system/config/index'),
+        name: 'Config',
+        meta: { title: '配置管理', icon: 'config' }
+      },
+      {
+        path: 'notice',
+        component: () => import('@/views/system/notice/index'),
+        name: 'Notice',
+        meta: { title: '通知管理', icon: 'message' }
+      }
+    ]
+  },
   {
     path: '/user',
     component: Layout,
-    hidden: true,
+    hidden: false,
     redirect: 'noredirect',
+    alwaysShow: true,
+    meta: { title: '个人中心', icon: 'user' },
     children: [
       {
         path: 'profile',
         component: () => import('@/views/system/user/profile/index'),
         name: 'Profile',
-        meta: { title: '个人中心', icon: 'user' }
+        meta: { title: '查看用户信息', icon: 'user' }
       }
     ]
   }
@@ -95,7 +170,7 @@ export const dynamicRoutes = [
   {
     path: '/system/user-auth',
     component: Layout,
-    hidden: true,
+    hidden: false,
     permissions: ['system:user:edit'],
     children: [
       {
